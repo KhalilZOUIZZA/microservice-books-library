@@ -1,0 +1,24 @@
+stages:
+  - compile
+  - build
+
+maven-backend-compile-job:
+  image: maven:3.9.8
+  stage: compile
+  script:
+    - echo "Compiling the project..."
+    - cd backend-ms1/
+    - mvn compile -DskipTests
+
+maven-backend-build-job:
+  image: maven:3.9.8
+  stage: build
+  script:
+    - echo "Packaging the project..."
+    - cd backend-ms1/
+    - mvn clean package -DskipTests
+  artifacts:
+    paths:
+      - backend-ms1/target/*.jar
+  dependencies:
+    - maven-backend-compile-job

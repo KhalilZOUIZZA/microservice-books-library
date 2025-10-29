@@ -1,0 +1,232 @@
+/* Main Container */
+.book-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(8, 15, 30);
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.book-header-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.book-header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(8, 15, 30);
+    color: white;
+}
+
+.book-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-login-btn {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.book-register-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Loading Indicator */
+.book-loading {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* No Data Message */
+.book-no-data {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f0ad4e;
+}
+
+/* Books Grid */
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Book Item */
+.book-item {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+/* Book Card */
+.book-card {
+    background-color: #1d1f21;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Book Image */
+.book-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Book Details */
+.book-details {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.book-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.book-badge.available {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.book-badge.unavailable {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Add to Cart Button */
+.book-add-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.book-add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.pagination-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Modal for Description */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 23, 23, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    color: #8f0909;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Read More Button in Description */
+.read-more-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.read-more-btn:hover {
+    color: #0056b3;
+}

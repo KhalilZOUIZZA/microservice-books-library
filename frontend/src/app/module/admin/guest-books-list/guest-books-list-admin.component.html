@@ -1,0 +1,68 @@
+<div class="book-container">
+    <!-- Header Section -->
+    <div class="book-header">
+        <div class="book-header-title-container">
+            <img src="assets/layout/images/books2.png" alt="Logo" class="book-logo" />
+            <h1 class="book-header-title">Guest Books</h1>
+        </div>
+        <div>
+            <button class="book-btn book-login-btn" (click)="navigateToLogin()">Login</button>
+            <button class="book-btn book-register-btn" (click)="navigateToRegister()">Register</button>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="book-loading">
+        <span class="spinner-border spinner-border-sm"></span>
+        Loading books, please wait...
+    </div>
+
+    <!-- No Books Message -->
+    <div *ngIf="!isLoading && books.length === 0" class="book-no-data">
+        No books available.
+    </div>
+
+    <!-- Books Display -->
+    <div class="book-grid" *ngIf="!isLoading && books.length > 0">
+        <div class="book-item" *ngFor="let book of books">
+            <div class="book-card">
+                <!-- Book Image -->
+                <img [src]="book.imageUrl" class="book-image" [alt]="book.title" />
+
+                <!-- Book Details -->
+                <div class="book-details">
+                    <h2 class="book-title">{{ book.title }}</h2>
+                    <p><strong>Category:</strong> {{ book.category?.label }}</p>
+                    <p><strong>Author:</strong> {{ book.author?.fullName }}</p>
+                    <p class="book-description">
+                        {{ book.description | slice: 0:100 }}...
+                        <button class="read-more-btn" (click)="showDescription(book)">Read More</button>
+                    </p>
+
+                    <span class="book-badge" [ngClass]="{ 'available': book.available, 'unavailable': !book.available }">
+                        {{ book.available ? 'Available' : 'Unavailable' }}
+                    </span>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="book-add-btn" (click)="addToCart(book)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls" *ngIf="!isLoading && totalPages > 1">
+        <button class="pagination-btn" (click)="goToPreviousPage()" [disabled]="currentPage === 0"> < </button>
+        <span class="page-info">Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+        <button class="pagination-btn" (click)="goToNextPage()" [disabled]="currentPage + 1 >= totalPages"> > </button>
+    </div>
+
+    <!-- Description Modal -->
+    <div class="modal" *ngIf="selectedBook">
+        <div class="modal-content">
+            <span class="close-btn" (click)="closeDescription()">&times;</span>
+            <h2>{{ selectedBook.title }}</h2>
+            <p>{{ selectedBook.description }}</p>
+        </div>
+    </div>
+</div>

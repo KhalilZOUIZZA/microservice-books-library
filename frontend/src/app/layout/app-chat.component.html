@@ -1,0 +1,16 @@
+<div class="chat-container">
+    <h3>Chat with BookBot</h3>
+    <div class="chat-messages" #messagesContainer>
+        <div *ngIf="messages.length">
+            <div *ngFor="let message of messages">
+                <p class="message" [class.user-message]="message.isUser" style="color: black;">{{ message.text }}</p>
+            </div>
+        </div>
+    </div>
+    <textarea 
+        [(ngModel)]="userInput" 
+        placeholder="Ask a question about books" 
+        (keydown.enter)="sendMessage()"
+    ></textarea>
+    <button (click)="sendMessage()">Send</button>
+</div>

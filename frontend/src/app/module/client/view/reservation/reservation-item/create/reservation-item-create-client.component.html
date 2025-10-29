@@ -1,0 +1,50 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'reservationItem.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'reservationItem.tabPan' | translate}}">
+                                <div class="grid">
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="1">{{'reservationItem.copy' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="copys" [(ngModel)]="item.copy" id="1" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="serialNumber" placeholder="{{'reservationItem.copy' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="2">{{'reservationItem.reservation' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="reservations" [(ngModel)]="item.reservation" id="2" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="code" placeholder="{{'reservationItem.reservation' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'reservationItem.returnDate' | translate}}</label>
+                                                    <p-calendar appendTo="body" id="3"  [showTime]="true" [showSeconds]="false" placeholder="{{'reservationItem.returnDate' | translate}}"  [(ngModel)]="item.returnDate"
+                                                            dateFormat="{{dateFormat}}"  >
+                                                    </p-calendar>
+                                                    
+                                                </div>
+
+                                </div>
+                            </p-tabPanel>
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-flexbox">
+
+                            <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="save()"></button>
+
+
+                            <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideCreateDialog()"></button>
+
+
+                </div>
+            </ng-template>
+
+    </p-dialog>

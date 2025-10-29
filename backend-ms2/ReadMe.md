@@ -1,0 +1,1 @@
+les deux back end en local changer minio:9000 with local host:9000

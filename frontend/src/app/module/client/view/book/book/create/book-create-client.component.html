@@ -1,0 +1,148 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'book.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'book.tabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'book.code' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'book.code' | translate}}" id="1" [(ngModel)]="item.code"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validBookCode}"  />
+                                                    <small class='p-error' *ngIf='!validBookCode'>Code is obligatory.</small>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="2">{{'book.label' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'book.label' | translate}}" id="2" [(ngModel)]="item.label"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validBookLabel}"  />
+                                                    <small class='p-error' *ngIf='!validBookLabel'>Label is obligatory.</small>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'book.title' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'book.title' | translate}}" id="3" [(ngModel)]="item.title"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validBookTitle}"  />
+                                                    <small class='p-error' *ngIf='!validBookTitle'>Title is obligatory.</small>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="4">{{'book.editionDate' | translate}}<span style="color: red;">*</span></label>
+                                                    <p-calendar appendTo="body" id="4"  [showTime]="true" [showSeconds]="false" placeholder="{{'book.editionDate' | translate}}"  [(ngModel)]="item.editionDate"
+                                                            dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validBookEditionDate}"  >
+                                                    </p-calendar>
+                                                    <small class='p-error' *ngIf='!validBookEditionDate'>EditionDate is obligatory.</small>
+                                                </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="5">{{'book.description' | translate}}</label>
+                                                    <textarea id="5" pInputTextarea rows="5" cols="30" placeholder="{{'book.description' | translate}}"  [(ngModel)]="item.description"
+                                                             ></textarea>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="6">{{'book.numberOfCopies' | translate}}<span style="color: red;">*</span></label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="6" placeholder="{{'book.numberOfCopies' | translate}}" [(ngModel)]="item.numberOfCopies" [ngClass]="{'ng-invalid ng-dirty' : !validBookNumberOfCopies}"  >
+                                                    </p-inputNumber>
+                                                    <small class='p-error' *ngIf='!validBookNumberOfCopies'>NumberOfCopies is obligatory.</small>
+                                                </div>
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="7">{{'book.available' | translate}}<span style="color: red;">*</span></label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="7"  [(ngModel)]="item.available"
+                                                                [ngClass]="{'ng-invalid ng-dirty' : !validBookAvailable}"  >
+                                                        </p-inputSwitch>
+                                                        <small class='p-error' *ngIf='!validBookAvailable'>Available is obligatory.</small>
+                                                    </div>
+                                                </div>
+
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="8">{{'book.category' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="categorys" [(ngModel)]="item.category" id="8" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="label" placeholder="{{'book.category' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="9">{{'book.author' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="authors" [(ngModel)]="item.author" id="9" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="fullName" placeholder="{{'book.author' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="11">{{'book.imageUrl' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'book.imageUrl' | translate}}" id="11" [(ngModel)]="item.imageUrl"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'book.copies' | translate}}">
+                                                <div class="p-col">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-6">
+                                                                        <label for="1">Serial number<span style="color: red;">*</span></label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Serial number"
+                                                                               id="1" [(ngModel)]="copiesElement.serialNumber" autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validCopiesSerialNumber}"  >
+                                                                        <small class='p-error' *ngIf='!validCopiesSerialNumber'>SerialNumber is obligatory.</small>
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addCopies()"></button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="p-col">
+                                                    <div class="card">
+                                                        <p-table [value]="item.copies" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Serial number</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p let-i="rowIndex">
+                                                                <tr>
+                                                                                <td>{{p.serialNumber}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteCopies(p,i)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editCopies(p,i)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                                </div>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-flexbox">
+
+                            <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="save()"></button>
+
+
+                            <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideCreateDialog()"></button>
+
+
+                </div>
+            </ng-template>
+
+    </p-dialog>

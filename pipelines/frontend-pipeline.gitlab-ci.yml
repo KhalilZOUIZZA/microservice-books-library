@@ -1,0 +1,39 @@
+stages:
+  - compile
+  - build
+  - angular-deploy-nginx
+
+angular-npm-install-job:
+  stage: compile
+  image: node:16
+  script:
+    - echo "Installing dependencies..."
+    - cd frontend/
+    - npm install
+  artifacts:
+    paths:
+      - frontend/node_modules
+
+angular-build-job:
+  stage: build
+  image: node:16
+  script:
+    - echo "Building frontend..."
+    - cd frontend/
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/dist/
+  dependencies:
+    - angular-npm-install-job
+
+deploy-job:
+  stage: angular-deploy-nginx
+  image: nginx:alpine
+  script:
+    - echo "Deploying frontend to Nginx..."
+    - rm -rf /usr/share/nginx/html/*
+    - cp -r frontend/dist/sakai-ng/* /usr/share/nginx/html/
+    - cp frontend/src/zyn/nginx/localhost/default.conf /etc/nginx/conf.d/default.conf
+  dependencies:
+    - angular-build-job

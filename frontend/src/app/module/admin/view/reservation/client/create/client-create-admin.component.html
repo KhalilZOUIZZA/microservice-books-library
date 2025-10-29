@@ -1,0 +1,123 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'client.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'client.tabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'client.description' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'client.description' | translate}}" id="1" [(ngModel)]="item.description"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="2">{{'client.passwordChanged' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="2"  [(ngModel)]="item.passwordChanged"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'client.username' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'client.username' | translate}}" id="3" [(ngModel)]="item.username"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="4">{{'client.accountNonExpired' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="4"  [(ngModel)]="item.accountNonExpired"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="5">{{'client.credentialsNonExpired' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="5"  [(ngModel)]="item.credentialsNonExpired"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="6">{{'client.enabled' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="6"  [(ngModel)]="item.enabled"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="7">{{'client.email' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'client.email' | translate}}" id="7" [(ngModel)]="item.email"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="8">{{'client.password' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'client.password' | translate}}" id="8" [(ngModel)]="item.password"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field align-inputswitch col-12  md:col-6">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="9">{{'client.accountNonLocked' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="9"  [(ngModel)]="item.accountNonLocked"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                </div>
+                            </p-tabPanel>
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-flexbox">
+
+                            <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="save()"></button>
+
+
+                            <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideCreateDialog()"></button>
+
+
+                </div>
+            </ng-template>
+
+    </p-dialog>

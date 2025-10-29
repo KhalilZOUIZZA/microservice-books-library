@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+            <include file="classpath:db/migration/changelog/reservation/ReservationItem.xml"/>
+        <include file="classpath:db/migration/changelog/reservation/Reservation.xml"/>
+        <include file="classpath:db/migration/changelog/reservation/ReservationState.xml"/>
+        <include file="classpath:db/migration/changelog/reservation/Client.xml"/>
+        <include file="classpath:db/migration/changelog/book/Copy.xml"/>
+        <include file="classpath:db/migration/changelog/book/Book.xml"/>
+        <include file="classpath:db/migration/changelog/book/Category.xml"/>
+        <include file="classpath:db/migration/changelog/book/Author.xml"/>
+
+</databaseChangeLog>

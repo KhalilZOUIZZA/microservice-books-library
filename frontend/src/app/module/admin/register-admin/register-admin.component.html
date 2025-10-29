@@ -1,0 +1,50 @@
+<p-toast></p-toast>
+
+<div class="signIn">
+
+    <div class="toogle-left">
+        <h1>Awesome!🎉</h1>
+        <p>Already created an account?  <br>
+            Head back and login now!</p>
+        <button class="singInBtn" style="background-color: #00bcd4;" id="login" (click)="login()"><i class="pi pi-user"></i> Go Login</button>
+        <br>
+        <button class="back" [routerLink]="['/']"><span><i class="pi pi-home"></i></span>Go Home</button>
+        <div class="icon">
+            <img src="assets/layout/login/readbooks2.png">
+        </div>
+    </div>
+
+    <form (ngSubmit)="submit()">
+        <h1>Create Account</h1>
+        
+        <div class="firstName">
+            <input type="text" id="firstName" [(ngModel)]="registerDto.firstName" name="firstName" required>
+            <label for="firstName">First Name</label>
+        </div>
+        <div class="lastName">
+            <input type="text" id="lastName" [(ngModel)]="registerDto.lastName" name="lastName" required>
+            <label for="lastName">Last Name</label>
+        </div>
+        <div class="email">
+            <input type="email" id="email" [(ngModel)]="registerDto.email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="phone">
+            <input type="number" id="phone" [(ngModel)]="registerDto.phone" name="phone" required>
+            <label for="phone">Phone</label>
+        </div>
+        <div class="userName">
+            <input type="text" id="userName" [(ngModel)]="registerDto.username" name="username" required>
+            <label for="userName">Username</label>
+        </div>
+        <div class="password">
+            <input type="password" id="password" [(ngModel)]="registerDto.password" name="password" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="div-btn">
+            <button class="submit" type="submit" style="background-color: #00bcd4;">Sign Up</button>
+        </div>
+    </form>
+
+    
+</div>

@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s  # Set the scrape interval to 15 seconds
+  evaluation_interval: 10s
+
+scrape_configs:
+  - job_name: 'referential-v1'
+    scheme: http  # Assuming HTTPS is required
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['referential-v1:8036']
+    tls_config:
+      insecure_skip_verify: true  # Only if you want to skip TLS verification
+
+  - job_name: 'library-v1'
+    scheme: http  # Assuming HTTPS is required
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['library-v1:8037']
+    tls_config:
+      insecure_skip_verify: true  # Only if you want to skip TLS verification
+

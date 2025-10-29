@@ -1,0 +1,125 @@
+    <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'reservation.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+        <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'reservation.tabPan' | translate}}">
+                        <div class="grid">
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="1">{{'reservation.code' | translate}}<span style="color: red;">*</span></label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'reservation.code' | translate}}" id="1" [(ngModel)]="item.code"
+                                                   [ngClass]="{'ng-invalid ng-dirty' : !validReservationCode}"  />
+                                            <small class='p-error' *ngIf='!validReservationCode'>Code est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="2">{{'reservation.requestDate' | translate}}<span style="color: red;">*</span></label>
+                                            <p-calendar appendTo="body" id="2"  [showTime]="true" [showSeconds]="false" placeholder="{{'reservation.requestDate' | translate}}"  [(ngModel)]="item.requestDate"
+                                                        dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validReservationRequestDate}"  >
+                                            </p-calendar>
+                                            <small class='p-error' *ngIf='!validReservationRequestDate'>RequestDate est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="3">{{'reservation.theoreticalReturnDate' | translate}}<span style="color: red;">*</span></label>
+                                            <p-calendar appendTo="body" id="3"  [showTime]="true" [showSeconds]="false" placeholder="{{'reservation.theoreticalReturnDate' | translate}}"  [(ngModel)]="item.theoreticalReturnDate"
+                                                        dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validReservationTheoreticalReturnDate}"  >
+                                            </p-calendar>
+                                            <small class='p-error' *ngIf='!validReservationTheoreticalReturnDate'>TheoreticalReturnDate est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="4">{{'reservation.effectiveReturnDate' | translate}}</label>
+                                            <p-calendar appendTo="body" id="4"  [showTime]="true" [showSeconds]="false" placeholder="{{'reservation.effectiveReturnDate' | translate}}"  [(ngModel)]="item.effectiveReturnDate"
+                                                        dateFormat="{{dateFormat}}"  >
+                                            </p-calendar>
+                                            
+                                        </div>
+
+                                    <div class="field col-11 md:col-6">
+                                        <label for="5">{{'reservation.reservationState' | translate}}</label>
+                                        <p-dropdown  appendTo="body"  [options]="reservationStates" [(ngModel)]="item.reservationState" id="5" [filter]="true" filterMatchMode="contains"
+                                                     [showClear]="true" optionLabel="label" placeholder="{{'reservation.reservationState' | translate}}"  >
+                                        </p-dropdown>
+                                        
+                                    </div>
+
+                                    <div class="field col-11 md:col-6">
+                                        <label for="6">{{'reservation.client' | translate}}</label>
+                                        <p-dropdown  appendTo="body"  [options]="clients" [(ngModel)]="item.client" id="6" [filter]="true" filterMatchMode="contains"
+                                                     [showClear]="true" optionLabel="email" placeholder="{{'reservation.client' | translate}}"  >
+                                        </p-dropdown>
+                                        
+                                    </div>
+
+                        </div>
+                    </p-tabPanel>
+                            <p-tabPanel header="{{'reservation.reservationItems' | translate}}">
+                                        <div class="p-col">
+                                            <div class="grid">
+                                                            <div class="field col-11 md:col-6">
+                                                                <label>Copy</label>
+                                                                <p-dropdown  appendTo="body"  [options]="copys" [(ngModel)]="reservationItemsElement.copy"
+                                                                             id="1"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="serialNumber"
+                                                                             placeholder="Copy"  >
+                                                                </p-dropdown>
+                                                                
+                                                            </div>
+
+                                                            <div class="field col-12 md:col-6">
+                                                                <label for="3">Return date</label>
+                                                                <p-calendar appendTo="body" id="3"  [showTime]="true" [showSeconds]="false" placeholder="Return date" [(ngModel)]="reservationItemsElement.returnDate"
+                                                                            dateFormat="{{dateFormat}}" [showIcon]="true"  ></p-calendar>
+                                                                
+                                                            </div>
+                                                <div class="field col-12 md:col-1">
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addReservationItems()"></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="p-col">
+                                            <div class="card">
+                                                <p-table [value]="item.reservationItems" [scrollable]="true" scrollHeight="200px">
+                                                    <ng-template pTemplate="header">
+                                                        <tr>
+                                                                        <th>Copy</th>
+                                                                        <th>Return date</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </ng-template>
+                                                    <ng-template pTemplate="body" let-p let-i="rowIndex">
+                                                        <tr>
+                                                                    <td>{{p.copy?.serialNumber}}</td>
+                                                                        <td>{{p.returnDate | date: dateFormatColumn}}</td>
+                                                            <td>
+                                                                <button (click)="deleteReservationItems(p,i)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                <button (click)="editReservationItems(p,i)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                            </td>
+                                                        </tr>
+                                                    </ng-template>
+                                                </p-table>
+                                            </div>
+
+                                        </div>
+                            </p-tabPanel>
+
+
+                </p-tabView>
+
+        </ng-template>
+
+        <ng-template pTemplate="footer" >
+            <div class="p-flexbox">
+
+                    <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="edit()"></button>
+
+
+                        <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+
+
+            </div>
+        </ng-template>
+
+    </p-dialog>

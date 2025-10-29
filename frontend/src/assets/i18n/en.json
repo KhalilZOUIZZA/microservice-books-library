@@ -1,0 +1,245 @@
+{
+    "from-to": "Elements from {first} to {last} (total {totalRecords})",
+    "new" : "New",
+    "search": "Search",
+    "export": "Export",
+    "validate": "Validate",
+    "search": "Seach...",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "creation": "Creation",
+    "list": "List",
+	"actionPermission":{
+        "reference": "Reference",
+        "libelle": "Libelle",
+        "actionPermission": "Action permission",
+        "tabPan": "Action permission",
+        "header": "Liste des action permissions",
+        "deleteActionPermissionConfirmationMessage": "Are you sure you want to delete action permission",
+        "deleteActionPermissionsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "modelPermissionUser":{
+        "actionPermission": "Action permission",
+        "actionPermissionPlaceHolder": "Select a Action permission",
+        "actionPermissionPlaceHolderFilter": "Search by Action permission",
+        "modelPermission": "Model permission",
+        "modelPermissionPlaceHolder": "Select a Model permission",
+        "modelPermissionPlaceHolderFilter": "Search by Model permission",
+        "value": "Value",
+        "user": "User",
+        "userPlaceHolder": "Select a User",
+        "userPlaceHolderFilter": "Search by User",
+        "subAttribute": "Sub attribute",
+        "modelPermissionUser": "Model permission user",
+        "tabPan": "Model permission user",
+        "header": "Liste des model permission users",
+        "deleteModelPermissionUserConfirmationMessage": "Are you sure you want to delete model permission user",
+        "deleteModelPermissionUsersConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+    "role":{
+        "authority": "Authority",
+        "role": "Role",
+        "tabPan": "Role",
+        "header": "Liste des roles",
+        "deleteRoleConfirmationMessage": "Are you sure you want to delete role",
+        "deleteRolesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+
+    "roleUser":{
+        "role": "Role",
+        "rolePlaceHolder": "Select a Role",
+        "rolePlaceHolderFilter": "Search by Role",
+        "user": "User",
+        "userPlaceHolder": "Select a User",
+        "userPlaceHolderFilter": "Search by User",
+        "roleUser": "Role user",
+        "tabPan": "Role user",
+        "header": "Liste des role users",
+        "deleteRoleUserConfirmationMessage": "Are you sure you want to delete role user",
+        "deleteRoleUsersConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "user":{
+        "credentialsNonExpired": "Credentials non expired",
+        "enabled": "Enabled",
+        "email": "Email",
+        "accountNonExpired": "Account non expired",
+        "accountNonLocked": "Account non locked",
+        "username": "Username",
+        "password": "Password",
+        "passwordChanged": "Password changed",
+        "modelPermissionUsers": "Model permission users",
+        "roleUsers": "Role users",
+        "RoleUsersPlaceHolder": "Select multiple Roles",
+        "user": "User",
+        "tabPan": "User",
+        "header": "Liste des users",
+        "deleteUserConfirmationMessage": "Are you sure you want to delete user",
+        "deleteUsersConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "modelPermission":{
+        "reference": "Reference",
+        "libelle": "Libelle",
+        "modelPermission": "Model permission",
+        "tabPan": "Model permission",
+        "header": "Liste des model permissions",
+        "deleteModelPermissionConfirmationMessage": "Are you sure you want to delete model permission",
+        "deleteModelPermissionsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+
+    "book":{
+        "code": "Code",
+        "label": "Label",
+        "title": "Title",
+        "editionDate": "Edition date",
+        "editionDateMin": "Edition date Min",
+        "editionDateMax": "Edition date Max",
+        "description": "Description",
+        "numberOfCopies": "Number of copies",
+        "numberOfCopiesMin": "Number of copies Min",
+        "numberOfCopiesMax": "Number of copies Max",
+        "available": "Available",
+        "category": "Category",
+        "categoryPlaceHolder": "Select a Category",
+        "categoryPlaceHolderFilter": "Search by Category",
+        "author": "Author",
+        "authorPlaceHolder": "Select a Author",
+        "authorPlaceHolderFilter": "Search by Author",
+        "copies": "Copies",
+        "imageUrl": "Image url",
+        "book": "Book",
+        "tabPan": "Book",
+        "header": "Liste des books",
+        "deleteBookConfirmationMessage": "Are you sure you want to delete book",
+        "deleteBooksConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "category":{
+        "code": "Code",
+        "label": "Label",
+        "category": "Category",
+        "tabPan": "Category",
+        "header": "Liste des categorys",
+        "deleteCategoryConfirmationMessage": "Are you sure you want to delete category",
+        "deleteCategorysConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "author":{
+        "code": "Code",
+        "label": "Label",
+        "fullName": "Full name",
+        "author": "Author",
+        "tabPan": "Author",
+        "header": "Liste des authors",
+        "deleteAuthorConfirmationMessage": "Are you sure you want to delete author",
+        "deleteAuthorsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservationItem":{
+        "copy": "Copy",
+        "copyPlaceHolder": "Select a Copy",
+        "copyPlaceHolderFilter": "Search by Copy",
+        "reservation": "Reservation",
+        "reservationPlaceHolder": "Select a Reservation",
+        "reservationPlaceHolderFilter": "Search by Reservation",
+        "returnDate": "Return date",
+        "returnDateMin": "Return date Min",
+        "returnDateMax": "Return date Max",
+        "reservationItem": "Reservation item",
+        "tabPan": "Reservation item",
+        "header": "Liste des reservation items",
+        "deleteReservationItemConfirmationMessage": "Are you sure you want to delete reservation item",
+        "deleteReservationItemsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "copy":{
+        "serialNumber": "Serial number",
+        "book": "Book",
+        "bookPlaceHolder": "Select a Book",
+        "bookPlaceHolderFilter": "Search by Book",
+        "copy": "Copy",
+        "tabPan": "Copy",
+        "header": "Liste des copys",
+        "deleteCopyConfirmationMessage": "Are you sure you want to delete copy",
+        "deleteCopysConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservation":{
+        "code": "Code",
+        "requestDate": "Request date",
+        "requestDateMin": "Request date Min",
+        "requestDateMax": "Request date Max",
+        "theoreticalReturnDate": "Theoretical return date",
+        "theoreticalReturnDateMin": "Theoretical return date Min",
+        "theoreticalReturnDateMax": "Theoretical return date Max",
+        "effectiveReturnDate": "Effective return date",
+        "effectiveReturnDateMin": "Effective return date Min",
+        "effectiveReturnDateMax": "Effective return date Max",
+        "reservationState": "Reservation state",
+        "reservationStatePlaceHolder": "Select a Reservation state",
+        "reservationStatePlaceHolderFilter": "Search by Reservation state",
+        "client": "Client",
+        "clientPlaceHolder": "Select a Client",
+        "clientPlaceHolderFilter": "Search by Client",
+        "reservationItems": "Reservation items",
+        "reservation": "Reservation",
+        "tabPan": "Reservation",
+        "header": "Liste des reservations",
+        "deleteReservationConfirmationMessage": "Are you sure you want to delete reservation",
+        "deleteReservationsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservationState":{
+        "code": "Code",
+        "label": "Label",
+        "style": "Style",
+        "reservationState": "Reservation state",
+        "tabPan": "Reservation state",
+        "header": "Liste des reservation states",
+        "deleteReservationStateConfirmationMessage": "Are you sure you want to delete reservation state",
+        "deleteReservationStatesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "client":{
+        "description": "Description",
+        "passwordChanged": "Password changed",
+        "username": "Username",
+        "accountNonExpired": "Account non expired",
+        "credentialsNonExpired": "Credentials non expired",
+        "enabled": "Enabled",
+        "email": "Email",
+        "password": "Password",
+        "accountNonLocked": "Account non locked",
+        "client": "Client",
+        "tabPan": "Client",
+        "header": "Liste des clients",
+        "deleteClientConfirmationMessage": "Are you sure you want to delete client",
+        "deleteClientsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+"appName": "GED"
+}
+
+

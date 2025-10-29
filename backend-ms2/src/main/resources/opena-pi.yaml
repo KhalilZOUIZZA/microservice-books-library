@@ -1,0 +1,677 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /reservationItems:
+    get:
+      summary: List all reservationItems
+      operationId: listReservationItems
+      tags:
+        - reservationItems
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reservationItems
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReservationItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reservationItem
+      operationId: createReservationItems
+      tags:
+        - reservationItems
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reservationItems/{reservationItemId}:
+    get:
+      summary: Info for a specific reservationItem
+      operationId: showReservationItemById
+      tags:
+        - reservationItems
+      parameters:
+        - name: reservationItemId
+          in: path
+          required: true
+          description: The id of the reservationItem to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReservationItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reservations:
+    get:
+      summary: List all reservations
+      operationId: listReservations
+      tags:
+        - reservations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reservations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Reservations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reservation
+      operationId: createReservations
+      tags:
+        - reservations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reservations/{reservationId}:
+    get:
+      summary: Info for a specific reservation
+      operationId: showReservationById
+      tags:
+        - reservations
+      parameters:
+        - name: reservationId
+          in: path
+          required: true
+          description: The id of the reservation to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Reservations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reservationStates:
+    get:
+      summary: List all reservationStates
+      operationId: listReservationStates
+      tags:
+        - reservationStates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reservationStates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReservationStates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reservationState
+      operationId: createReservationStates
+      tags:
+        - reservationStates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reservationStates/{reservationStateId}:
+    get:
+      summary: Info for a specific reservationState
+      operationId: showReservationStateById
+      tags:
+        - reservationStates
+      parameters:
+        - name: reservationStateId
+          in: path
+          required: true
+          description: The id of the reservationState to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReservationStates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /clients:
+    get:
+      summary: List all clients
+      operationId: listClients
+      tags:
+        - clients
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of clients
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Clients'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a client
+      operationId: createClients
+      tags:
+        - clients
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /clients/{clientId}:
+    get:
+      summary: Info for a specific client
+      operationId: showClientById
+      tags:
+        - clients
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The id of the client to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Clients'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /copys:
+    get:
+      summary: List all copys
+      operationId: listCopys
+      tags:
+        - copys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of copys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Copys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a copy
+      operationId: createCopys
+      tags:
+        - copys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /copys/{copyId}:
+    get:
+      summary: Info for a specific copy
+      operationId: showCopyById
+      tags:
+        - copys
+      parameters:
+        - name: copyId
+          in: path
+          required: true
+          description: The id of the copy to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Copys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /books:
+    get:
+      summary: List all books
+      operationId: listBooks
+      tags:
+        - books
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of books
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Books'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a book
+      operationId: createBooks
+      tags:
+        - books
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /books/{bookId}:
+    get:
+      summary: Info for a specific book
+      operationId: showBookById
+      tags:
+        - books
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          description: The id of the book to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Books'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorys:
+    get:
+      summary: List all categorys
+      operationId: listCategorys
+      tags:
+        - categorys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of categorys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Categorys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a category
+      operationId: createCategorys
+      tags:
+        - categorys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorys/{categoryId}:
+    get:
+      summary: Info for a specific category
+      operationId: showCategoryById
+      tags:
+        - categorys
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          description: The id of the category to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Categorys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /authors:
+    get:
+      summary: List all authors
+      operationId: listAuthors
+      tags:
+        - authors
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of authors
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Authors'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a author
+      operationId: createAuthors
+      tags:
+        - authors
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /authors/{authorId}:
+    get:
+      summary: Info for a specific author
+      operationId: showAuthorById
+      tags:
+        - authors
+      parameters:
+        - name: authorId
+          in: path
+          required: true
+          description: The id of the author to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Authors'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  ReservationItem:
+    type: "object"
+    required:
+      - id
+      - returnDate
+    properties:
+      id:
+        type: int
+      returnDate:
+        type: date
+  ReservationItems:
+    type: array
+    items:
+      $ref: '#/definitions/ReservationItem'
+  Reservation:
+    type: "object"
+    required:
+      - id
+      - code
+      - requestDate
+      - theoreticalReturnDate
+      - effectiveReturnDate
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      requestDate:
+        type: date
+      theoreticalReturnDate:
+        type: date
+      effectiveReturnDate:
+        type: date
+  Reservations:
+    type: array
+    items:
+      $ref: '#/definitions/Reservation'
+  ReservationState:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  ReservationStates:
+    type: array
+    items:
+      $ref: '#/definitions/ReservationState'
+  Client:
+    type: "object"
+    required:
+      - id
+      - description
+      - passwordChanged
+      - username
+      - accountNonExpired
+      - credentialsNonExpired
+      - enabled
+      - email
+      - password
+      - accountNonLocked
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      accountNonExpired:
+        type: boolean
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      email:
+        type: string
+      password:
+        type: string
+      accountNonLocked:
+        type: boolean
+  Clients:
+    type: array
+    items:
+      $ref: '#/definitions/Client'
+  Copy:
+    type: "object"
+    required:
+      - id
+      - serialNumber
+    properties:
+      id:
+        type: int
+      serialNumber:
+        type: string
+  Copys:
+    type: array
+    items:
+      $ref: '#/definitions/Copy'
+  Book:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - title
+      - editionDate
+      - description
+      - numberOfCopies
+      - available
+      - imageUrl
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      title:
+        type: string
+      editionDate:
+        type: date
+      description:
+        type: string
+      numberOfCopies:
+        type: int
+      available:
+        type: boolean
+      imageUrl:
+        type: string
+  Books:
+    type: array
+    items:
+      $ref: '#/definitions/Book'
+  Category:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+  Categorys:
+    type: array
+    items:
+      $ref: '#/definitions/Category'
+  Author:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - fullName
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      fullName:
+        type: string
+  Authors:
+    type: array
+    items:
+      $ref: '#/definitions/Author'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

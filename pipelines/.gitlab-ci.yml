@@ -1,0 +1,34 @@
+include:
+  - local: 'pipelines/backend-ms1-pipeline.gitlab-ci.yml'
+  - local: 'pipelines/frontend-pipeline.gitlab-ci.yml'
+
+stages:
+   - compile
+   - build
+   - angular-deploy-nginx
+   - deploy-docker
+   - docker-down
+
+docker-deploy-job:
+  stage: deploy-docker
+  image: docker:27-cli
+  services:
+    - docker:27-dind
+  script:
+    - echo "Deploying application..."
+    - cd deploy
+    - docker compose up -d --build
+  rules:
+    - when: manual
+
+docker-down-job:
+  stage: docker-down
+  image: docker:27-cli
+  services:
+    - docker:27-dind
+  script:
+    - echo "docker compose down..."
+    - cd deploy
+    - docker compose down
+  rules:
+    - when: manual

@@ -1,0 +1,242 @@
+{
+    "from-to": "العناصر من {first} إلى {last} (الإجمالي {totalRecords})",
+    "new": "جديد",
+    "search": "بحث",
+    "export": "تصدير",
+    "validate": "التحقق",
+    "search": "البحث...",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "next": "التالي",
+    "yes": "نعم",
+    "no": "لا",
+    "actions": "الإجراءات",
+    "confirm": "تأكيد",
+    "creation": "إنشاء",
+    "list": "قائمة",
+
+    "actionPermission": {
+        "reference": "المرجع",
+        "libelle": "التسمية",
+        "actionPermission": "إذن الإجراء",
+        "tabPan": "إذن الإجراء",
+        "header": "قائمة أذونات الإجراءات",
+        "deleteActionPermissionConfirmationMessage": "هل أنت متأكد أنك تريد حذف إذن الإجراء؟",
+        "deleteActionPermissionsConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "modelPermissionUser": {
+        "actionPermission": "إذن الإجراء",
+        "actionPermissionPlaceHolder": "اختر إذن الإجراء",
+        "actionPermissionPlaceHolderFilter": "البحث حسب إذن الإجراء",
+        "modelPermission": "إذن النموذج",
+        "modelPermissionPlaceHolder": "اختر إذن النموذج",
+        "modelPermissionPlaceHolderFilter": "البحث حسب إذن النموذج",
+        "value": "القيمة",
+        "user": "المستخدم",
+        "userPlaceHolder": "اختر مستخدمًا",
+        "userPlaceHolderFilter": "البحث حسب المستخدم",
+        "subAttribute": "السمة الفرعية",
+        "modelPermissionUser": "إذن مستخدم النموذج",
+        "tabPan": "إذن مستخدم النموذج",
+        "header": "قائمة مستخدمي إذن النموذج",
+        "deleteModelPermissionUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف مستخدم إذن النموذج؟",
+        "deleteModelPermissionUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "role": {
+        "authority": "السلطة",
+        "role": "الدور",
+        "tabPan": "الدور",
+        "header": "قائمة الأدوار",
+        "deleteRoleConfirmationMessage": "هل أنت متأكد أنك تريد حذف الدور؟",
+        "deleteRolesConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "roleUser": {
+        "role": "الدور",
+        "rolePlaceHolder": "اختر دورًا",
+        "rolePlaceHolderFilter": "البحث حسب الدور",
+        "user": "المستخدم",
+        "userPlaceHolder": "اختر مستخدمًا",
+        "userPlaceHolderFilter": "البحث حسب المستخدم",
+        "roleUser": "دور المستخدم",
+        "tabPan": "دور المستخدم",
+        "header": "قائمة مستخدمي الدور",
+        "deleteRoleUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف مستخدم الدور؟",
+        "deleteRoleUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "user": {
+        "credentialsNonExpired": "صلاحية الاعتماد غير منتهية",
+        "enabled": "مفعل",
+        "email": "البريد الإلكتروني",
+        "accountNonExpired": "الحساب غير منتهي",
+        "accountNonLocked": "الحساب غير مقفل",
+        "username": "اسم المستخدم",
+        "password": "كلمة المرور",
+        "passwordChanged": "تم تغيير كلمة المرور",
+        "modelPermissionUsers": "مستخدمو إذن النموذج",
+        "roleUsers": "مستخدمو الدور",
+        "RoleUsersPlaceHolder": "حدد عدة أدوار",
+        "user": "المستخدم",
+        "tabPan": "المستخدم",
+        "header": "قائمة المستخدمين",
+        "deleteUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف المستخدم؟",
+        "deleteUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+	"modelPermission": {
+		"reference": "المرجع",
+		"libelle": "التسمية",
+		"modelPermission": "إذن النموذج",
+		"tabPan": "إذن النموذج",
+		"header": "قائمة أذونات النماذج",
+		"deleteModelPermissionConfirmationMessage": "هل أنت متأكد أنك تريد حذف إذن النموذج؟",
+		"deleteModelPermissionsConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+	},
+
+
+
+    "book":{
+        "code": "Code",
+        "label": "Label",
+        "title": "Title",
+        "editionDate": "Edition date",
+        "editionDateMin": "Edition date Min",
+        "editionDateMax": "Edition date Max",
+        "description": "Description",
+        "numberOfCopies": "Number of copies",
+        "numberOfCopiesMin": "Number of copies Min",
+        "numberOfCopiesMax": "Number of copies Max",
+        "available": "Available",
+        "category": "Category",
+        "categoryPlaceHolder": "Select a Category",
+        "categoryPlaceHolderFilter": "Search by Category",
+        "author": "Author",
+        "authorPlaceHolder": "Select a Author",
+        "authorPlaceHolderFilter": "Search by Author",
+        "copies": "Copies",
+        "imageUrl": "Image url",
+        "book": "Book",
+        "tabPan": "Book",
+        "header": "Liste des books",
+        "deleteBookConfirmationMessage": "Are you sure you want to delete book",
+        "deleteBooksConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "category":{
+        "code": "Code",
+        "label": "Label",
+        "category": "Category",
+        "tabPan": "Category",
+        "header": "Liste des categorys",
+        "deleteCategoryConfirmationMessage": "Are you sure you want to delete category",
+        "deleteCategorysConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "author":{
+        "code": "Code",
+        "label": "Label",
+        "fullName": "Full name",
+        "author": "Author",
+        "tabPan": "Author",
+        "header": "Liste des authors",
+        "deleteAuthorConfirmationMessage": "Are you sure you want to delete author",
+        "deleteAuthorsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservationItem":{
+        "copy": "Copy",
+        "copyPlaceHolder": "Select a Copy",
+        "copyPlaceHolderFilter": "Search by Copy",
+        "reservation": "Reservation",
+        "reservationPlaceHolder": "Select a Reservation",
+        "reservationPlaceHolderFilter": "Search by Reservation",
+        "returnDate": "Return date",
+        "returnDateMin": "Return date Min",
+        "returnDateMax": "Return date Max",
+        "reservationItem": "Reservation item",
+        "tabPan": "Reservation item",
+        "header": "Liste des reservation items",
+        "deleteReservationItemConfirmationMessage": "Are you sure you want to delete reservation item",
+        "deleteReservationItemsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "copy":{
+        "serialNumber": "Serial number",
+        "book": "Book",
+        "bookPlaceHolder": "Select a Book",
+        "bookPlaceHolderFilter": "Search by Book",
+        "copy": "Copy",
+        "tabPan": "Copy",
+        "header": "Liste des copys",
+        "deleteCopyConfirmationMessage": "Are you sure you want to delete copy",
+        "deleteCopysConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservation":{
+        "code": "Code",
+        "requestDate": "Request date",
+        "requestDateMin": "Request date Min",
+        "requestDateMax": "Request date Max",
+        "theoreticalReturnDate": "Theoretical return date",
+        "theoreticalReturnDateMin": "Theoretical return date Min",
+        "theoreticalReturnDateMax": "Theoretical return date Max",
+        "effectiveReturnDate": "Effective return date",
+        "effectiveReturnDateMin": "Effective return date Min",
+        "effectiveReturnDateMax": "Effective return date Max",
+        "reservationState": "Reservation state",
+        "reservationStatePlaceHolder": "Select a Reservation state",
+        "reservationStatePlaceHolderFilter": "Search by Reservation state",
+        "client": "Client",
+        "clientPlaceHolder": "Select a Client",
+        "clientPlaceHolderFilter": "Search by Client",
+        "reservationItems": "Reservation items",
+        "reservation": "Reservation",
+        "tabPan": "Reservation",
+        "header": "Liste des reservations",
+        "deleteReservationConfirmationMessage": "Are you sure you want to delete reservation",
+        "deleteReservationsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "reservationState":{
+        "code": "Code",
+        "label": "Label",
+        "style": "Style",
+        "reservationState": "Reservation state",
+        "tabPan": "Reservation state",
+        "header": "Liste des reservation states",
+        "deleteReservationStateConfirmationMessage": "Are you sure you want to delete reservation state",
+        "deleteReservationStatesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "client":{
+        "description": "Description",
+        "passwordChanged": "Password changed",
+        "username": "Username",
+        "accountNonExpired": "Account non expired",
+        "credentialsNonExpired": "Credentials non expired",
+        "enabled": "Enabled",
+        "email": "Email",
+        "password": "Password",
+        "accountNonLocked": "Account non locked",
+        "client": "Client",
+        "tabPan": "Client",
+        "header": "Liste des clients",
+        "deleteClientConfirmationMessage": "Are you sure you want to delete client",
+        "deleteClientsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+"appName": "GED"
+}
+
+
